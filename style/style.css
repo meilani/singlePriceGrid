@@ -28,8 +28,109 @@
 */
 
 /*************
+    MAIN
+*************/
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr 1fr 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "join join"
+    "month why"
+    "footer footer";
+}
+
+div {
+    padding: 25px;
+}
+
+
+/*************
+    JOIN
+*************/
+.join {
+    background-color: #ffffff;
+    color: hsl(218, 22%, 67%);
+    grid-area: join;
+}
+
+.join h1 {
+    color: hsl(179, 62%, 43%);
+}
+
+.join h2 {
+    color: hsl(71, 73%, 54%);
+}
+
+/*************
+    MONTHLY
+*************/
+.monthly {
+    background-color: hsl(179, 62%, 43%);
+    color: #ffffff;
+    grid-area: month;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.monthly strong {
+    font-size: 2em;
+}
+
+.monthly form {
+    align-self: center;
+    width: 100%;
+}
+
+.monthly input {
+    background-color: hsl(71, 73%, 54%);
+    color: #ffffff;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    border: none;
+    font-size: 1.2em;
+}
+
+
+
+/*************
+    WHY
+*************/
+
+.why {
+    background-color: #4abebd;
+    color: #ffffff;
+    grid-area: why;
+}
+
+.why ul {
+    padding: 0;
+}
+
+.why ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/*************
     FOOTER
 *************/
+footer {
+    grid-area: footer;
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
