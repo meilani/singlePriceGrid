@@ -1,4 +1,11 @@
 /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/*
 # Front-end Style Guide
 
 - Mobile: 375px
@@ -33,17 +40,21 @@
 html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-family: 'Karla', sans-serif;
     font-size: 25px;
 }
 
 body {
     height: 100vh;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 1fr 1fr 50px;
     grid-template-rows: 1fr 1fr 50px;
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
+        grid-template-areas: 
     "join join"
     "month why"
     "footer footer";
@@ -57,6 +68,9 @@ h2 {
     JOIN
 *************/
 .join {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     background-color: #ffffff;
     color: hsl(218, 22%, 67%);
     grid-area: join;
@@ -83,12 +97,19 @@ h2 {
     MONTHLY
 *************/
 .monthly {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
     background-color: hsl(179, 62%, 43%);
     color: #ffffff;
     grid-area: month;
     padding: 5% 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .monthly strong {
@@ -108,7 +129,9 @@ h2 {
 }
 
 .monthly form {
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     width: 100%;
     margin: auto;
 }
@@ -123,7 +146,8 @@ h2 {
     border: none;
     font-size: 1.1em;
     margin-top: 15px;
-    box-shadow: 5px 5px 25px hsl(218, 22%, 67%);
+    -webkit-box-shadow: 5px 5px 25px hsl(218, 22%, 67%);
+            box-shadow: 5px 5px 25px hsl(218, 22%, 67%);
 }
 
 
@@ -133,6 +157,8 @@ h2 {
 *************/
 
 .why {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
     background-color: #4abebd;
     color: #ffffff;
     grid-area: why;
@@ -155,6 +181,9 @@ h2 {
     FOOTER
 *************/
 footer {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-area: footer;
 }
 
@@ -188,9 +217,11 @@ footer {
 
 @media (max-width: 600px) {
     body {
+        -ms-grid-rows: 350px 400px 400px 50px;
         grid-template-rows: 350px 400px 400px 50px;
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-        grid-template-areas: 
+            grid-template-areas: 
         "join"
         "month"
         "why"
@@ -198,5 +229,23 @@ footer {
     }
     .monthly p {
         font-size: 1.1em;
+    }
+    .join {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+    .monthly {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    }
+    .why {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+    footer {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
     }
 }
